@@ -1,0 +1,126 @@
+/* src/main.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+    background-image: url('../public/pexels-lukas-574073.jpg');
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  header {
+    background-color: #666666c1;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+  }
+  
+  section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin-top: 2rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 1rem;
+  }
+  
+  a {
+    color: #0095ffe9;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Styles */
+  
+  /* Mobile Styles */
+  @media (max-width: 576px) {
+    header {
+      padding: 0.5rem;
+    }
+  
+    nav {
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+  
+    nav a {
+      margin: 0.5rem;
+    }
+  
+    section {
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #ffc107; /* Change the link color on hover */
+    text-decoration: underline; /* Add an underline effect on hover */
+  }
+  /* Tablet Styles */
+  @media (min-width: 577px) and (max-width: 768px) {
+    header {
+      padding: 0.8rem;
+    }
+  
+    nav a {
+      margin: 0.8rem;
+    }
+  
+    section {
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+  }
+  

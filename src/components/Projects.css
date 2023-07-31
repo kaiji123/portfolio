@@ -1,0 +1,50 @@
+/* Projects.css */
+
+.projects-section {
+    margin-top: 40px;
+  }
+  
+  .project-card {
+    background-color: #c2fffe;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+    background-color: #ebfad3; /* Change background color on hover */
+  }
+  
+  .project-card h3 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .project-card p {
+    margin-bottom: 10px;
+  }
+  
+  .technologies {
+    font-style: italic;
+    color: #666666;
+  }
+  
+  a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #ff33aa4d;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  a:hover {
+    background-color: #e2f0ff;
+    transform: scale(1.1);
+  }
+  

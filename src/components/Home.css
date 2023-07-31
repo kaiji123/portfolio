@@ -1,0 +1,97 @@
+/* src/components/Home.css */
+
+
+
+.home-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    box-shadow: 0 8px 10px rgba(0, 65, 134, 0.556);
+    
+  }
+  
+  .home-section div {
+    margin-bottom: 40px;
+  }
+  
+  .home-section h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .home-section p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .home-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .experience-card,
+  .education-card {
+    background-color: #c2fffe;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden; /* Hide overflowing elements for animation */
+    transform: translateY(0); /* Set initial state for animation */
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+  }
+  
+  .experience-card:hover,
+  .education-card:hover {
+    background-color: #ebfad3; /* Change background color on hover */
+    transform: translateY(-5px); /* Move the card up slightly on hover */
+  }
+  
+  .experience-card h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .experience-card p {
+    font-size: 16px;
+    color: #888888;
+    margin-bottom: 15px;
+  }
+  
+  .experience-card ul {
+    list-style-type: disc;
+    margin-left: 30px;
+  }
+  
+  .experience-card li {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  .explore-more {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .explore-more h2 {
+    margin-bottom: 10px;
+  }
+  
+  /* Links in Explore More section */
+  .explore-more a {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px; /* Rounded corners for the links */
+    transition: background-color 0.3s ease;
+  }
+  
+  .explore-more a:hover {
+    background-color: #0056b3;
+  }
