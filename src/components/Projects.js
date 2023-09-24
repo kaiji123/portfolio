@@ -4,6 +4,24 @@ import './Projects.css';
 const Projects = () => {
   const projects = [
     {
+      title: 'character-device-driver',
+      description: 'This is a software component developed to interact with and manage character devices within the Linux kernel. Character devices are a type of special file in the Linux file system that represents devices that provide or accept data on a character-by-character basis. Examples of character devices include serial ports, keyboards, mice, and various hardware sensors.',
+      githubLink: 'https://github.com/kaiji123/character-device-driver',
+      technologies: ['C', 'Linux', 'bash'],
+    },
+    {
+      title: 'haskell-interpreter',
+      description: 'This is a custom language interpreter developed using the Haskell programming language. Unlike traditional Haskell, which follows its well-defined syntax and semantics, this interpreter introduces its own syntax, enabling users to write code in a way that deviates from standard Haskell conventions. The primary goal of this project is to provide a platform for experimenting with and executing code using a unique syntax while harnessing the power of Haskell capabilities',
+      githubLink: 'https://github.com/kaiji123/haskell-interpreter',
+      technologies: ['Haskell', 'Programming Language Design'],
+    },
+    {
+      title: 'quantum-algs',
+      description: 'This code uses Qiskit, a quantum computing framework, to create and utilize quantum circuits for various tasks. It includes functions for Quantum Approximate Optimization Algorithm (QAOA), Quantum Fourier Transform (QFT), Variational Quantum Eigensolver (VQE), and data encoding. These tools demonstrate expertise in quantum algorithm development and quantum circuit design, with applications in optimization, signal processing, and data manipulation.',
+      githubLink: 'https://github.com/kaiji123/quantum-algs',
+      technologies: ['Quantum Computing', 'Qiskit'],
+    },
+    {
       title: 'Final Year Project',
       description: 'For my final year project, I developed cutting-edge artificial intelligence systems known as Adaptive Distance Detection and Adaptive Instance Segmentation. These advanced systems integrate the power of both object detection and segmentation techniques to effectively identify and locate targets in visual data. By combining these methods, the AI systems offer enhanced precision and accuracy, making them highly efficient tools for various applications. Through this project, I have explored the frontiers of artificial intelligence, contributing to the field of computer vision and object recognition.',
       githubLink: 'https://github.com/kaiji123/AIS-ADD',

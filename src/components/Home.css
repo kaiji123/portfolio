@@ -95,3 +95,8 @@
   .explore-more a:hover {
     background-color: #0056b3;
   }
+
+  .profileimage{
+    width: 30%;
+    height: 40%;
+  }
