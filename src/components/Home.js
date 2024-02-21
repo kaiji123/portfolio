@@ -96,7 +96,7 @@ const Home = () => {
   return (
     <section className="home-section">
       <div>
-        <h1>Welcome to My Portfolio</h1>
+        <h1 className='gradient-text'>Welcome to My Portfolio</h1>
         <img src={image} className='profileimage'/>
         <p>
           Hi, I'm Kai Yi Ji, a passionate developer with experience in front-end technologies like React, HTML, CSS, JavaScript and many more.
