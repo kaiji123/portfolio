@@ -91,6 +91,42 @@
     border-radius: 10px; /* Rounded corners for the links */
     transition: background-color 0.3s ease;
   }
+
+  @media screen and (max-width: 768px) {
+    .experience-card,
+    .education-card {
+      margin-left: 25%;
+      max-width: 35%;
+    }
+
+    .experience-card h3 {
+        font-size: 18px; /* Decrease font size for smaller screens */
+    }
+
+    .experience-card p {
+        font-size: 14px; /* Decrease font size for smaller screens */
+    }
+
+    .experience-card ul {
+        margin-left: 0px; /* Adjust margin for smaller screens */
+    }
+
+    .experience-card li {
+        font-size: 14px; /* Decrease font size for smaller screens */
+    }
+    h2{
+      margin-left: 25%;
+    }
+    .explore-more h2{
+      margin-left: 0%;
+    }
+    .certification-card{
+      margin-left: 25%;
+      max-width: 30%;
+    }
+    
+}
+
   
   .explore-more a:hover {
     background-color: #0056b3;
@@ -150,7 +186,7 @@
   h2 {
     --s: 0.1em;   /* the thickness of the line */
     --c: #2c4bff; /* the color */
-    
+
     color: #0000;
     padding-bottom: var(--s);
     background: 

@@ -12,7 +12,7 @@
   
   .star {
     position: absolute;
-    z-index: 999;
+    /* z-index: 999; */
     color: rgb(255, 0, 0);
     font-size: 1rem;
     animation-duration: 1500ms;
