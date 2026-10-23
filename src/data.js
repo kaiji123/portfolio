@@ -26,7 +26,17 @@ export const stats = [
   { value: '30+', label: 'projects, papers & books' },
 ];
 
+// Newest first.
 export const experience = [
+  {
+    company: 'Independent',
+    role: 'Travel Coordinator & Logistics Planner',
+    period: 'May 2026 – Jun 2026',
+    points: [
+      'Planned and ran a 5-city itinerary (Vienna, Budapest, Bratislava, Hallstatt, Prague) across trains, buses and local transit with zero scheduling delays.',
+      'Managed a multi-currency budget (EUR, HUF, CZK) and handled language, navigation and real-time itinerary changes.',
+    ],
+  },
   {
     company: 'Outlier · Scale AI',
     role: 'AI Agent Evaluation Trainee',
@@ -101,15 +111,6 @@ export const experience = [
     period: 'Sep 2021 – Oct 2021',
     points: [
       'Built React Native screens from Figma designs for an eco-friendly moving startup, working in agile sprints.',
-    ],
-  },
-  {
-    company: 'Independent',
-    role: 'Travel Coordinator & Logistics Planner',
-    period: 'May 2026 – Jun 2026',
-    points: [
-      'Planned and ran a 5-city itinerary (Vienna, Budapest, Bratislava, Hallstatt, Prague) across trains, buses and local transit with zero scheduling delays.',
-      'Managed a multi-currency budget (EUR, HUF, CZK) and handled language, navigation and real-time itinerary changes.',
     ],
   },
 ];
