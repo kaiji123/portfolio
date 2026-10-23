@@ -1,9 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import photo from './assets/profile.jpg';
 import {
   profile, stats, experience, education, research, books, projects,
   projectCategories, channels, otherMade, skills, certifications, languages,
 } from './data.js';
+import { caseStudies } from './caseStudies.js';
+
+const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const allProjects = projects.map((p) => ({ ...p, slug: slugify(p.name), study: caseStudies[p.name] }));
+const studied = allProjects.filter((p) => p.study);
+const projectPath = (p) => `#/projects/${p.slug}`;
+const DEFAULT_TITLE = document.title;
+
+function useHash() {
+  const [hash, setHash] = useState(window.location.hash);
+  useEffect(() => {
+    const onChange = () => setHash(window.location.hash);
+    window.addEventListener('hashchange', onChange);
+    return () => window.removeEventListener('hashchange', onChange);
+  }, []);
+  return hash;
+}
 
 const NAV = [
   ['experience', 'Experience'],
@@ -204,14 +221,21 @@ function Research() {
   );
 }
 
+// Remembered so the filter survives a trip to a case study and back.
+let lastCategory = 'all';
+
 function Projects() {
-  const [cat, setCat] = useState('all');
-  const shown = cat === 'all' ? projects : projects.filter((p) => p.cat === cat);
+  const [cat, setCatState] = useState(lastCategory);
+  const setCat = (c) => { lastCategory = c; setCatState(c); };
+  const shown = cat === 'all' ? allProjects : allProjects.filter((p) => p.cat === cat);
   return (
     <Section id="projects" index="04" title="Projects">
+      <p className="section-note reveal">
+        Projects marked <span className="accent">Case study</span> have a full write-up: the problem, the approach and the outcome.
+      </p>
       <div className="filters reveal" role="tablist">
         {projectCategories.map((c) => {
-          const count = c.id === 'all' ? projects.length : projects.filter((p) => p.cat === c.id).length;
+          const count = c.id === 'all' ? allProjects.length : allProjects.filter((p) => p.cat === c.id).length;
           return (
             <button
               key={c.id}
@@ -227,13 +251,18 @@ function Projects() {
       </div>
       <div className="project-grid">
         {shown.map((p) => (
-          <article key={p.name} className="card project">
+          <article key={p.name} className={`card project ${p.study ? 'has-study' : ''}`}>
+            {p.study && <span className="study-badge">Case study</span>}
             <h3>
-              {p.href ? <Ext href={p.href}>{p.name} <span className="arrow">↗</span></Ext> : p.name}
+              {p.study
+                ? <a className="stretched" href={projectPath(p)}>{p.name}</a>
+                : p.href ? <Ext href={p.href}>{p.name} <span className="arrow">↗</span></Ext> : p.name}
             </h3>
             <p>{p.text}</p>
             <div className="tags">{p.tech.map((t) => <span key={t}>{t}</span>)}</div>
-            {p.extra && <Ext className="link" href={p.extra.href}>{p.extra.label} ↗</Ext>}
+            {p.study
+              ? <span className="link">Read case study →</span>
+              : p.extra && <Ext className="link" href={p.extra.href}>{p.extra.label} ↗</Ext>}
           </article>
         ))}
       </div>
@@ -258,6 +287,54 @@ function Projects() {
         </div>
       </div>
     </Section>
+  );
+}
+
+function ProjectPage({ project: p }) {
+  const s = p.study;
+  const category = projectCategories.find((c) => c.id === p.cat)?.label;
+  const links = [
+    ...(s.links || (p.href ? [{ label: 'View project', href: p.href }] : [])),
+    ...(p.extra ? [p.extra] : []),
+  ];
+  const i = studied.indexOf(p);
+  const prev = studied[(i - 1 + studied.length) % studied.length];
+  const next = studied[(i + 1) % studied.length];
+
+  return (
+    <article className="case">
+      <a href="#projects" className="back">← All projects</a>
+      <header className="case-head">
+        <p className="eyebrow">{category}</p>
+        <h1>{p.name}<span className="accent">.</span></h1>
+        <p className="lede">{s.subtitle}</p>
+        <div className="tags">{p.tech.map((t) => <span key={t}>{t}</span>)}</div>
+        {(s.role || links.length > 0) && (
+          <div className="case-meta">
+            {s.role && <span>{s.role}</span>}
+            {links.map((l) => <Ext key={l.href} className="btn" href={l.href}>{l.label} ↗</Ext>)}
+          </div>
+        )}
+      </header>
+
+      <section className="case-section">
+        <h2>The problem</h2>
+        <p>{s.problem}</p>
+      </section>
+      <section className="case-section">
+        <h2>The approach</h2>
+        <ul className="bullets">{s.approach.map((a) => <li key={a}>{a}</li>)}</ul>
+      </section>
+      <section className="case-section">
+        <h2>The outcome</h2>
+        <ul className="bullets">{s.outcome.map((o) => <li key={o}>{o}</li>)}</ul>
+      </section>
+
+      <nav className="case-nav" aria-label="More case studies">
+        <a href={projectPath(prev)}><span className="muted mono">← Previous</span>{prev.name}</a>
+        <a href={projectPath(next)} className="next"><span className="muted mono">Next →</span>{next.name}</a>
+      </nav>
+    </article>
   );
 }
 
@@ -320,17 +397,42 @@ function Contact() {
 
 export default function App() {
   const toggleTheme = useTheme();
+  const hash = useHash();
+  const slug = hash.match(/^#\/projects\/([\w-]+)/)?.[1];
+  const project = slug && studied.find((p) => p.slug === slug);
+  const wasDetail = useRef(false);
   useReveal();
+
+  // Opening a case study starts at the top; leaving one jumps to the section in the link.
+  useEffect(() => {
+    if (project) {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      document.title = `${project.name} — Kai Yi Ji`;
+    } else {
+      document.title = DEFAULT_TITLE;
+      if (wasDetail.current) {
+        const el = hash.length > 1 && document.getElementById(hash.slice(1));
+        if (el) el.scrollIntoView({ behavior: 'instant' });
+        else window.scrollTo({ top: 0, behavior: 'instant' });
+      }
+    }
+    wasDetail.current = Boolean(project);
+  }, [hash]);
+
   return (
     <>
       <Nav onToggleTheme={toggleTheme} />
       <main>
-        <Hero />
-        <Experience />
-        <Education />
-        <Research />
-        <Projects />
-        <Skills />
+        {project ? <ProjectPage key={project.slug} project={project} /> : (
+          <>
+            <Hero />
+            <Experience />
+            <Education />
+            <Research />
+            <Projects />
+            <Skills />
+          </>
+        )}
       </main>
       <Contact />
     </>

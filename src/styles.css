@@ -202,6 +202,43 @@ main, .contact { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 .inline-list a { border-bottom: 1px solid var(--line); }
 .inline-list a:hover { color: var(--accent); border-color: var(--accent); }
 
+/* Case study cards */
+.section-note { color: var(--muted); font-size: 0.93rem; margin: -18px 0 22px; }
+.project.has-study { position: relative; cursor: pointer; }
+.stretched::after { content: ''; position: absolute; inset: 0; border-radius: inherit; }
+.project.has-study:hover h3 { color: var(--accent); }
+.study-badge {
+  align-self: flex-start; font: 500 0.68rem/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 4px 8px;
+}
+
+/* Case study page */
+.case { max-width: 760px; padding: 56px 0 0; animation: fade 0.35s ease both; }
+.back { font: 0.85rem var(--mono); color: var(--muted); }
+.back:hover { color: var(--accent); }
+.case-head { margin: 36px 0 8px; padding-bottom: 32px; border-bottom: 1px solid var(--line); }
+.case-head .eyebrow { margin-bottom: 14px; }
+.case-head h1 { font: 400 clamp(2.4rem, 6vw, 3.8rem)/1.05 var(--serif); letter-spacing: -0.02em; margin-bottom: 12px; overflow-wrap: anywhere; }
+.case-head .lede { margin-bottom: 20px; }
+.case-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-top: 24px; }
+.case-meta > span { font: 0.82rem var(--mono); color: var(--muted); margin-right: 6px; }
+.case-meta > span::before { content: '— '; color: var(--accent); }
+.case-meta .btn { padding: 7px 14px; font-size: 0.85rem; }
+.case-section { padding: 36px 0 0; }
+.case-section h2 {
+  font: 400 1.6rem var(--serif); display: inline-block; margin-bottom: 16px;
+  padding-bottom: 6px; border-bottom: 1px dashed var(--accent);
+}
+.case-section p { font-size: 1.05rem; }
+.case-section .bullets li { margin: 10px 0; }
+.case-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--line); }
+.case-nav a {
+  display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; border: 1px solid var(--line);
+  border-radius: 14px; background: var(--surface); font: 400 1.15rem var(--serif); transition: border-color 0.2s;
+}
+.case-nav a:hover { border-color: var(--accent); }
+.case-nav .next { text-align: right; }
+
 /* Skills */
 .skill-row { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--line); align-items: start; }
 .skill-row h4 { margin: 8px 0 0; }
@@ -261,4 +298,7 @@ main, .contact { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
   .impact ul, .research-list, .books ul, .project-grid, .edu-grid, .creative, .two-col { grid-template-columns: 1fr; }
   .skill-row { grid-template-columns: 1fr; gap: 10px; }
   .skill-row h4 { margin: 0; }
+  .case { padding-top: 32px; }
+  .case-nav { grid-template-columns: 1fr; }
+  .case-nav .next { text-align: left; }
 }
