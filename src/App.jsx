@@ -231,7 +231,7 @@ function Projects() {
   return (
     <Section id="projects" index="04" title="Projects">
       <p className="section-note reveal">
-        Projects marked <span className="accent">Case study</span> have a full write-up: the problem, the approach and the outcome.
+        Projects marked <span className="accent">Read more</span> have a full write-up: the problem, the approach and the outcome.
       </p>
       <div className="filters reveal" role="tablist">
         {projectCategories.map((c) => {
@@ -252,7 +252,7 @@ function Projects() {
       <div className="project-grid">
         {shown.map((p) => (
           <article key={p.name} className={`card project ${p.study ? 'has-study' : ''}`}>
-            {p.study && <span className="study-badge">Case study</span>}
+            {p.study && <span className="study-badge">Read more</span>}
             <h3>
               {p.study
                 ? <a className="stretched" href={projectPath(p)}>{p.name}</a>
