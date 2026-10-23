@@ -188,6 +188,7 @@ export const books = [
 
 // category: web | ai | mobile | games | tools
 export const projects = [
+  { name: 'Trace Lab', cat: 'tools', text: 'Step-through visual traces of 199 coding interview problems across 19 patterns, with quizzes, drills and spaced repetition. Every trace is tested against the Python on screen.', tech: ['JavaScript', 'Python', 'Node.js', 'PWA'] },
   { name: 'MediSim', cat: 'ai', text: 'Simulates real-time patient scenarios so aspiring doctors can practise for OSCE exams, with interactive feedback.', tech: ['Expo', 'React Native', 'Django'] },
   { name: 'MediSim Desktop', cat: 'ai', text: 'Desktop OSCE simulator using the latest LLMs, tuned for speed vs. quality, with video playback for realistic practice.', tech: ['PySide', 'LLMs'] },
   { name: 'BsFinancials', cat: 'ai', text: 'Converts bank statements to CSV and highlights accounting, auditing and legal insights with GPT. Also published as an API on RapidAPI.', tech: ['Svelte', 'Supabase', 'Stripe', 'OpenAI'] },

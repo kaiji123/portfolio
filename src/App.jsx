@@ -317,6 +317,14 @@ function ProjectPage({ project: p }) {
         )}
       </header>
 
+      {s.stats && (
+        <dl className="case-stats">
+          {s.stats.map((x) => (
+            <div key={x.label}><dt>{x.value}</dt><dd>{x.label}</dd></div>
+          ))}
+        </dl>
+      )}
+
       <section className="case-section">
         <h2>The problem</h2>
         <p>{s.problem}</p>
@@ -325,6 +333,13 @@ function ProjectPage({ project: p }) {
         <h2>The approach</h2>
         <ul className="bullets">{s.approach.map((a) => <li key={a}>{a}</li>)}</ul>
       </section>
+      {s.sections?.map((sec) => (
+        <section key={sec.title} className="case-section">
+          <h2>{sec.title}</h2>
+          {sec.text && <p>{sec.text}</p>}
+          {sec.points && <ul className="bullets">{sec.points.map((x) => <li key={x}>{x}</li>)}</ul>}
+        </section>
+      ))}
       <section className="case-section">
         <h2>The outcome</h2>
         <ul className="bullets">{s.outcome.map((o) => <li key={o}>{o}</li>)}</ul>
