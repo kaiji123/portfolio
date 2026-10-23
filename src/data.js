@@ -29,13 +29,13 @@ export const stats = [
 export const experience = [
   {
     company: 'Outlier · Scale AI',
-    role: 'AI Training Data Specialist',
-    period: 'Contract',
-    summary:
-      'Created high-quality training data for AI agents used by frontier clients (e.g. OpenClaw, Atlas).',
+    role: 'AI Agent Evaluation Trainee',
+    period: 'Apr 2026',
+    place: 'Virtual',
     points: [
-      'Authored golden trajectories — reference step-by-step solutions that show agents the ideal way to complete a task.',
-      'Reviewed and graded silver trajectories, correcting agent reasoning and tool use to raise data quality.',
+      'Trained on evaluating OpenClaw AI agents for hallucinations, using a taxonomy of false actions, ungrounded facts, file misreads and skipped verification.',
+      'Learned to design multi-step, multi-turn agent tasks grounded in real public use cases, with concrete, verifiable desired outcomes.',
+      'Practised writing binary, weighted rubrics against initial trajectories with grounded justifications.',
     ],
   },
   {
