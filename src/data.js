@@ -181,8 +181,6 @@ export const research = [
 ];
 
 export const books = [
-  { title: 'How to Deal with Fear', note: 'Memoir written at 24, as Will Of Triumph' },
-  { title: 'Discipline to Wait', note: 'A trading book, as Will Of Triumph' },
   { title: "The Indie Builder's Playbook", note: 'A guide for independent makers' },
 ];
 
@@ -236,8 +234,6 @@ export const channels = [
   { name: 'KaiGetsTech', href: 'https://www.youtube.com/@KaiGetsTech' },
   { name: 'KaiGetsEditing', href: 'https://www.youtube.com/@KaiGetsEditing' },
   { name: 'MotionLover', href: 'https://www.youtube.com/@MotionLover-e9w' },
-  { name: 'The Stoic Disciple', href: 'https://www.youtube.com/@TheStoicDisciple12345' },
-  { name: 'Will Of Trade', note: 'Investing practices' },
 ];
 
 export const otherMade = ['ShibaChain — a keychain design'];
