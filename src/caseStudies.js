@@ -8,6 +8,56 @@
 // sections [{ title, text?, points? }] shown between approach and outcome.
 
 export const caseStudies = {
+  OpenDAG: {
+    subtitle: 'An open dataset of causal diagrams extracted from epidemiology papers',
+    role: 'Hackathon build — Nebius × NVIDIA Global AI Hackathon (Best Apps & Agents)',
+    links: [
+      { label: 'Try the live demo', href: 'https://opendag.onrender.com' },
+      { label: 'Code on GitHub', href: 'https://github.com/kaiji123/openDAG' },
+    ],
+    stats: [
+      { value: '2', label: 'Nemotron models, split by task: Nano extracts, Super reasons' },
+      { value: '~$0.15', label: 'of model tokens to build and test the whole project' },
+      { value: 'CC BY 4.0', label: 'public dataset, exportable to DAGitty' },
+    ],
+    problem:
+      'Most observational studies never publish their causal assumptions. Without the DAG it is hard to see what the authors adjusted for, and harder still to spot the confounders they missed.',
+    approach: [
+      'Resolves a DOI, PMCID or PMID through Europe PMC and only accepts Creative Commons or public-domain papers, pulling just the abstract, methods, statistics and results.',
+      'Nemotron 3 Nano extracts the study design, exposure, outcome, nodes and edges as JSON; Pydantic and networkx then validate it, merge duplicates and drop edges that would create cycles, logging every fix.',
+      'Nemotron 3 Super, with reasoning on, proposes missing confounders and bias risks, then checks each one against the paper’s own text — it must quote the sentence, and code confirms the quote exists.',
+      'Tavily attaches evidence for each suggestion, and a person reviews, edits and approves the DAG before it joins the dataset.',
+      'Approved papers are linked through shared, MeSH-verified variable names into a 3D network, and an “ask the dataset” feature turns questions into exact structured queries so code, not the model, does the counting.',
+    ],
+    outcome: [
+      'A live public app and a growing open dataset, with every DAG exportable to DAGitty and the full dataset as JSONL.',
+      'AI suggestions are always labelled and kept separate from what the paper reported.',
+      'Splitting models by task keeps costs low: the large model never sees the full paper text.',
+    ],
+  },
+  Anomality: {
+    subtitle: 'A weekly anomaly report for stocks and crypto, built to hold up in a crash',
+    links: [{ label: 'Code on GitHub', href: 'https://github.com/kaiji123/Anomality' }],
+    stats: [
+      { value: '29 of 30', label: 'test periods since 2019 beating the simple estimate' },
+      { value: '23%', label: 'smaller misses than the simple estimate in the 2020 crash' },
+      { value: '3.6×', label: 'more movement in assets flagged volatile vs. calm' },
+      { value: '3,177', label: 'model weights — full 7-year backtest retrains in 12 minutes' },
+    ],
+    problem:
+      'Most forecasting models learn from normal markets and break down in a crash, exactly when you need them.',
+    approach: [
+      'Started from a 2026 research model (RG-ResMoE) and found that its regime gate fails in a market crash.',
+      'Fixed it with log-scaled volatility inputs and tested the fix out of sample: a rolling retrain scored only on unseen weeks (May 2019 – Oct 2026, 56 assets, 103,593 forecasts).',
+      'Turned the model into a plain-English product: a market mood scale (Calm, Normal, Choppy, Stormy), the expected move for each asset in percent and dollars, and its “surprise weeks”.',
+      'Added a simple decision layer: when the mood is Stormy, hold every asset at half; otherwise stay fully invested.',
+    ],
+    outcome: [
+      'Average miss of ±1.96% on the weekly move, vs. ±2.24% for the simple “last month” estimate.',
+      'The crash-proofed model beat the original research model in 25 of 30 test periods (p < 0.001).',
+      'The mood rule grew +579% with a −30.3% worst drop, vs. +568% and −34.2% for buy and hold (backtested with trading costs, half invested on only 4% of days).',
+    ],
+  },
   'Trace Lab': {
     subtitle: 'Step-through traces of coding interview problems',
     role: 'Solo — design, trace engine, content and tooling',
