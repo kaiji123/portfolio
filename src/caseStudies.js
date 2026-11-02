@@ -58,6 +58,54 @@ export const caseStudies = {
       'The mood rule grew +579% with a −30.3% worst drop, vs. +568% and −34.2% for buy and hold (backtested with trading costs, half invested on only 4% of days).',
     ],
   },
+  Plantago: {
+    subtitle: 'A PayPal donation, turned into food grown or bought close to the people who need it',
+    role: 'Hackathon build — PayPal AI Hackathon (2026)',
+    links: [{ label: 'Code on GitHub', href: 'https://github.com/kaiji123/Plantago' }],
+    stats: [
+      { value: '4', label: 'PayPal APIs: Orders, Payouts, Payments and Webhooks' },
+      { value: '~60', label: 'towns, border posts and ports in the road network' },
+      { value: '30%', label: 'of each seeded harvest bought back at a fair price' },
+    ],
+    problem:
+      'Food aid often travels a long way and leaves little money with local farmers. Donors rarely see where their money went, or whether growing food locally would have fed more people.',
+    approach: [
+      'A donor picks a place in northern Kenya on a network map, chooses food now or drought-tolerant seed (or leaves it to the planner), and pays with PayPal checkout.',
+      'An LLM planner runs a tool loop over need, climate, planting season and grower prices. The AI chooses; code does the maths: the budget is fixed on the server and the model can only submit an allocation the optimizer built.',
+      'Growers are paid in one PayPal Payouts batch as soon as their orders are approved, and every dollar in and out appears on a public ledger with its PayPal transaction ID.',
+      'Shipments follow a road graph with Dijkstra routing; the dispatch console groups drop-offs, packs 3-tonne trucks, orders stops with 2-opt and picks the cheaper of a dedicated truck or part loads.',
+      'Money safety throughout: integer cents, idempotent PayPal requests, orders claimed in a database transaction before paying, verified webhooks and a ledger the tests check balances.',
+    ],
+    outcome: [
+      'A working end-to-end demo on real PayPal sandbox transactions, from donation to grower payout to tracked delivery.',
+      'A harvest buy-back turns a donation into seed, then farmer income, then food grown a few km from the people who eat it.',
+      'A 3D globe shows every grower, supplier and destination, with routes drawn by status and weight.',
+    ],
+  },
+  ModMap: {
+    subtitle: 'Seeing coordinated harassment in Twitch chat, not just bad words',
+    role: 'Hackathon build — Codex × TwitchCon hackathon',
+    links: [{ label: 'Code on GitHub', href: 'https://github.com/kaiji123/Modmap' }],
+    stats: [
+      { value: '5+', label: 'distinct senders converging on one target within 30 seconds raises an alert' },
+      { value: '50', label: 'users per reviewed bulk ban, timeout or unban' },
+      { value: '2 min', label: 'rolling window for the live interaction graph' },
+    ],
+    problem:
+      'Word filters judge one message at a time, so they miss a raid where many accounts pile onto the same person with mild or near-identical messages.',
+    approach: [
+      'Ingests live chat through Twitch OAuth and EventSub, and turns replies and mentions into a directed graph of who is targeting whom.',
+      'Sizes nodes by message count and colours them by a rolling word-filter score; flagged messages are masked and only revealed on request from the server.',
+      'A target-based detector raises an evidence-backed alert when at least 5 senders hit one person in 30 seconds with flagged, highly similar messages.',
+      'Moderators draw a loop around a group of users and ban, time out or unban them in one reviewed action through the Twitch moderation API.',
+      'A raid simulator with two hostile groups lets anyone try the full flow with no Twitch login, and simulated users can never reach real Twitch endpoints.',
+    ],
+    outcome: [
+      'A local-first prototype that connects to a real channel’s chat and moderates it.',
+      'Hardened OAuth: single-use state, server-held tokens with refresh and validation, and loopback-only binding.',
+      'Scores are labelled as signals, not verdicts: nothing is banned automatically unless autoban words are switched on.',
+    ],
+  },
   'Trace Lab': {
     subtitle: 'Step-through traces of coding interview problems',
     role: 'Solo — design, trace engine, content and tooling',
