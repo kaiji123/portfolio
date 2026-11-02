@@ -207,6 +207,9 @@ main, .contact { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 .project.has-study { position: relative; cursor: pointer; }
 .stretched::after { content: ''; position: absolute; inset: 0; border-radius: inherit; }
 .project.has-study:hover h3 { color: var(--accent); }
+.project.featured { border-color: var(--accent); background: linear-gradient(180deg, var(--accent-soft), var(--surface) 70%); }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.study-badge.featured-badge { background: var(--accent); color: var(--surface); }
 .study-badge {
   align-self: flex-start; font: 500 0.68rem/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 4px 8px;

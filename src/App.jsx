@@ -7,7 +7,9 @@ import {
 import { caseStudies } from './caseStudies.js';
 
 const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-const allProjects = projects.map((p) => ({ ...p, slug: slugify(p.name), study: caseStudies[p.name] }));
+const allProjects = projects
+  .map((p) => ({ ...p, slug: slugify(p.name), study: caseStudies[p.name] }))
+  .sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
 const studied = allProjects.filter((p) => p.study);
 const projectPath = (p) => `#/projects/${p.slug}`;
 const DEFAULT_TITLE = document.title;
@@ -231,7 +233,7 @@ function Projects() {
   return (
     <Section id="projects" index="04" title="Projects">
       <p className="section-note reveal">
-        Projects marked <span className="accent">Read more</span> have a full write-up: the problem, the approach and the outcome.
+        <span className="accent">★ Featured</span> projects are my strongest work and come first. Projects marked <span className="accent">Read more</span> have a full write-up: the problem, the approach and the outcome.
       </p>
       <div className="filters reveal" role="tablist">
         {projectCategories.map((c) => {
@@ -251,8 +253,13 @@ function Projects() {
       </div>
       <div className="project-grid">
         {shown.map((p) => (
-          <article key={p.name} className={`card project ${p.study ? 'has-study' : ''}`}>
-            {p.study && <span className="study-badge">Read more</span>}
+          <article key={p.name} className={`card project ${p.study ? 'has-study' : ''} ${p.featured ? 'featured' : ''}`}>
+            {(p.featured || p.study) && (
+              <div className="badges">
+                {p.featured && <span className="study-badge featured-badge">★ Featured</span>}
+                {p.study && <span className="study-badge">Read more</span>}
+              </div>
+            )}
             <h3>
               {p.study
                 ? <a className="stretched" href={projectPath(p)}>{p.name}</a>
