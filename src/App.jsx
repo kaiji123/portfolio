@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import photo from './assets/profile.jpg';
 import {
   profile, stats, experience, education, research, books, projects,
-  projectCategories, channels, otherMade, skills, certifications, languages,
+  projectCategories, channels, otherMade, skills, certifications, languages, memberships,
 } from './data.js';
 import { caseStudies } from './caseStudies.js';
 
@@ -384,8 +384,13 @@ function Skills() {
               <span>{l.items.join(' · ')}</span>
             </p>
           ))}
-          <h4 className="spaced">Community</h4>
-          <p>Member, University of Birmingham Computer Science Society (2020 – 2023)</p>
+          <h4 className="spaced">Memberships</h4>
+          {memberships.map((m) => (
+            <p key={m.org} className="lang">
+              <span className="muted mono">{m.role} · {m.dates}</span>
+              <span>{m.org}, {m.school}</span>
+            </p>
+          ))}
         </div>
       </div>
     </Section>

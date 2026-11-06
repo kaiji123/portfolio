@@ -254,6 +254,7 @@ export const skills = [
 ];
 
 export const certifications = [
+  'AmplifyME — Finance Accelerator Simulation: Sales & Trading and Asset Management (2026)',
   'AWS Certified Solutions Architect – Associate (2023)',
   'CompTIA Security+ (2024)',
   'Salesforce Certified Administrator (2024)',
@@ -271,4 +272,13 @@ export const certifications = [
 export const languages = [
   { level: 'Native / bilingual', items: ['English', 'Chinese', 'Slovak'] },
   { level: 'Elementary', items: ['French', 'German', 'Japanese'] },
+];
+
+export const memberships = [
+  { org: 'Oxford AI Safety Initiative (OAISI)', role: 'Community Member', dates: 'Nov 2026 – Present', school: 'University of Oxford' },
+  { org: 'Oxford AI Society (OxAI)', role: 'General Member', dates: 'Nov 2026 – Present', school: 'University of Oxford' },
+  { org: 'The Oxford Union Society', role: 'Lifetime Member', dates: 'Nov 2026 – Present', school: 'University of Oxford' },
+  { org: 'OX1 Incubator', role: 'Cohort Member', dates: 'Oct 2026 – Present', school: 'University of Oxford' },
+  { org: 'Oxford Finance Society (OFS)', role: 'General Member', dates: 'Oct 2026 – Present', school: 'University of Oxford' },
+  { org: 'Computer Science Society (CSS)', role: 'Member', dates: 'Sep 2020 – Sep 2021', school: 'University of Birmingham' },
 ];
