@@ -254,6 +254,7 @@ export const skills = [
 ];
 
 export const certifications = [
+  'Hack-Nation — Acknowledgment of Participation, Hack-Nation Oxford Hackathon (Nov 2026)',
   'AmplifyME — Finance Accelerator Simulation: Sales & Trading and Asset Management (2026)',
   'AWS Certified Solutions Architect – Associate (2023)',
   'CompTIA Security+ (2024)',
