@@ -106,6 +106,29 @@ export const caseStudies = {
       'Scores are labelled as signals, not verdicts: nothing is banned automatically unless autoban words are switched on.',
     ],
   },
+  FarmOS: {
+    subtitle: 'Field, soil and weather data, turned into a prioritised list of farm jobs, with or without signal',
+    role: 'Collaboration with two postdoctoral researchers, University of Oxford',
+    links: [{ label: 'Live demo', href: 'https://farmos-ogos.onrender.com/' }],
+    stats: [
+      { value: '72 h', label: 'disease-risk and soil-water history per field' },
+      { value: 'SFI / ELM', label: 'UK scheme compliance evidence packs, exported to PDF' },
+      { value: '100%', label: 'usable offline, from map tiles to simulations' },
+    ],
+    problem:
+      'Farms collect field, soil-probe and weather data, but turning it into what to do today is slow, and connectivity in the field is often poor or missing.',
+    approach: [
+      'An interactive field map colours each field by task priority and shows soil-probe readings with 72-hour disease-risk and soil-water history.',
+      'A prioritised to-do list estimates the cost saving of each job, backed by a profit-aware fertiliser decision model.',
+      'Compliance evidence packs for UK SFI/ELM schemes and Scope 3 reporting export straight to PDF.',
+      'A camera feed runs YOLOS-tiny object detection, alongside health monitoring for every data source.',
+      'Works fully offline with bundled map tiles, on-device simulations and service-worker caching.',
+    ],
+    outcome: [
+      'A working prototype on real field boundaries in northern France, with simulated agricultural data.',
+      'Built in TypeScript, React and Vite, and deployed as a live demo.',
+    ],
+  },
   'Trace Lab': {
     subtitle: 'Step-through traces of coding interview problems',
     role: 'Solo — design, trace engine, content and tooling',
