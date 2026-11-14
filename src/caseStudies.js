@@ -132,7 +132,10 @@ export const caseStudies = {
   Stackyard: {
     subtitle: 'A no-code card-stack maker whose exported file is the app, the stack and the save file',
     role: 'Hackathon build, Kiroween 2026 (Resurrection category), built with Kiro',
-    links: [{ label: 'Code on GitHub', href: 'https://github.com/kaiji123/stackyard' }],
+    links: [
+      { label: 'Live demo', href: 'https://stackyard.kaigets123.workers.dev/' },
+      { label: 'Code on GitHub', href: 'https://github.com/kaiji123/stackyard' },
+    ],
     stats: [
       { value: '1 file', label: 'self-contained HTML export that runs offline and imports back for editing' },
       { value: '~3 KB', label: 'gzipped player runtime shared by play mode and exported stacks' },
