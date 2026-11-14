@@ -160,6 +160,12 @@ export const research = [
     href: 'https://arxiv.org/abs/2305.17820',
   },
   {
+    title: 'Adaptive Distance Detection and Adaptive Instance Segmentation',
+    kind: 'Paper · arXiv',
+    text: 'Compares YOLOv5s object detection with a custom semantic segmentation model for spotting enemies in Counter-Strike: Condition Zero, then proposes Adaptive Distance Detection to combine their speed and shape accuracy.',
+    href: 'https://arxiv.org/abs/2611.15991',
+  },
+  {
     title: 'SA-HEACS: Server-Assisted Hybrid Execution and AI-Optimized Cloud Shielding Against Automated Reverse Engineering',
     kind: 'Paper · Zenodo · v2',
     text: 'A hybrid client–server execution model that shields software from automated reverse engineering.',
