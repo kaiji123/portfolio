@@ -415,6 +415,7 @@ function Contact() {
           <Ext className="btn" href={profile.links.linkedin}>LinkedIn</Ext>
           <Ext className="btn" href={profile.links.upwork}>Upwork</Ext>
           <Ext className="btn" href={profile.links.itch}>itch.io</Ext>
+          <Ext className="btn" href={profile.links.blog}>Research blog</Ext>
         </div>
       </div>
       <p className="muted small">© {new Date().getFullYear()} Kai Yi Ji</p>

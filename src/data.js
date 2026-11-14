@@ -14,6 +14,7 @@ export const profile = {
     linkedin: 'https://www.linkedin.com/in/kai-yi-ji-048b91210',
     upwork: 'https://www.upwork.com/freelancers/~013603b24909059e4e',
     itch: 'https://kaigets123.itch.io',
+    blog: 'https://kyjresearch.com/',
   },
 };
 
@@ -153,6 +154,12 @@ export const education = [
 ];
 
 export const research = [
+  {
+    title: 'Research Notebook',
+    kind: 'Blog · kyjresearch.com',
+    text: 'My research blog: experiments, results and findings in health modelling, safety and systems.',
+    href: 'https://kyjresearch.com/',
+  },
   {
     title: 'Analysis of ROC for Edge Detectors',
     kind: 'Paper · arXiv',
