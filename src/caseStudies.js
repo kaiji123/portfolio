@@ -129,6 +129,30 @@ export const caseStudies = {
       'Built in TypeScript, React and Vite, and deployed as a live demo.',
     ],
   },
+  Stackyard: {
+    subtitle: 'A no-code card-stack maker whose exported file is the app, the stack and the save file',
+    role: 'Hackathon build, Kiroween 2026 (Resurrection category), built with Kiro',
+    links: [{ label: 'Code on GitHub', href: 'https://github.com/kaiji123/stackyard' }],
+    stats: [
+      { value: '1 file', label: 'self-contained HTML export that runs offline and imports back for editing' },
+      { value: '~3 KB', label: 'gzipped player runtime shared by play mode and exported stacks' },
+      { value: '5', label: 'built-in example stacks, from a 24-card wiki to an escape room' },
+    ],
+    problem:
+      'HyperCard-style card-stack tools let anyone build lessons, games and stories without code, but they died of platform lock-in and took their stacks with them.',
+    approach: [
+      'Cards hold text, image and button objects on a scalable 800×600 canvas, with drag, resize, z-order and undo/redo.',
+      'No-code actions from dropdowns (go to card, show/hide, set flag, add item, if/else) stored as plain JSON and interpreted by an engine: no scripting language, no eval, no innerHTML.',
+      'A stack map of cards and links, plus a stack doctor that flags unreachable cards, dead buttons, unset flags and overlapping text.',
+      'A built-in pixel-art editor for sprites and backgrounds, with frame animation to GIF and preset movements that respect reduced-motion settings.',
+      'Exports use a strict CSP (default-src none, script allowed only by its sha256), make no network requests, and embed their OFL fonts.',
+    ],
+    outcome: [
+      'Pure-TypeScript core with versioned schemas and migrations, and a vanilla-TypeScript editor that works on phones and tablets.',
+      'Property-based tests (fast-check) cover export round trips, script injection, referential integrity, undo, migrations and graph-vs-play agreement; Playwright e2e runs on Chromium, Firefox, WebKit and emulated mobiles.',
+      'Specs, hooks and steering written in Kiro, with a log of the bugs its property tests caught.',
+    ],
+  },
   'Trace Lab': {
     subtitle: 'Step-through traces of coding interview problems',
     role: 'Solo — design, trace engine, content and tooling',
