@@ -156,7 +156,7 @@ export const caseStudies = {
       'Specs, hooks and steering written in Kiro, with a log of the bugs its property tests caught.',
     ],
   },
-  'Diagram to R': {
+  CompartModels: {
     subtitle: 'A box-and-arrow editor that turns compartmental epidemic models into runnable R code',
     role: 'Solo: generator, diagram editor, model library and test suite',
     links: [
