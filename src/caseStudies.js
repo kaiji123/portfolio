@@ -156,6 +156,33 @@ export const caseStudies = {
       'Specs, hooks and steering written in Kiro, with a log of the bugs its property tests caught.',
     ],
   },
+  'Diagram to R': {
+    subtitle: 'A box-and-arrow editor that turns compartmental epidemic models into runnable R code',
+    role: 'Solo: generator, diagram editor, model library and test suite',
+    links: [
+      { label: 'Live demo', href: 'https://compartmodels.com' },
+      { label: 'Code on GitHub', href: 'https://github.com/kaiji123/sir-models' },
+    ],
+    stats: [
+      { value: '118', label: 'library models, each generated, validated and solved in R by the tests' },
+      { value: '10', label: 'disease categories, from respiratory and STIs to vector-borne and within-host' },
+      { value: '0', label: 'max difference from the original hand-written Hepatitis E practical script' },
+    ],
+    problem:
+      'Compartmental models are drawn as box-and-arrow diagrams, but turning a diagram into correct deSolve code by hand is slow and error-prone: a flow added to one equation and forgotten in another breaks the model quietly.',
+    approach: [
+      'Each diagram element maps to R: compartments become state variables, arrows become matched outflow and inflow terms, and parameters and variables are emitted in dependency order.',
+      'A pure generator shared by the web app, a CLI and the tests, with deterministic output: no timestamps and no randomness, so the same diagram always gives byte-identical R.',
+      'Validation before code generation catches unknown names, syntax errors, reserved R names (F, T, c), name clashes, dependency cycles and per-capita inflows, and each error jumps to the problem in the diagram.',
+      'Library search by name, disease, compartment (has:E), category (cat:vector), reference or parameter.',
+      'Literature models were imported from research notes by a script, with every parameter tagged [verified], [recalled] or [illustrative].',
+    ],
+    outcome: [
+      '118 models across basic, intervention, natural-history, respiratory, sexually transmitted, vector-borne, enteric/NTD and zoonotic categories, including Ross–Macdonald, SIDARTHE and Chitnis malaria.',
+      'Golden-file tests plus R-side checks: the generated Hepatitis E model matches the original script exactly, and every library model solves with finite, non-negative compartments.',
+      'Built with Astro as a static site, deployed at compartmodels.com.',
+    ],
+  },
   'Trace Lab': {
     subtitle: 'Step-through traces of coding interview problems',
     role: 'Solo — design, trace engine, content and tooling',
