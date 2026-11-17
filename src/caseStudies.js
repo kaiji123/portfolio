@@ -183,6 +183,33 @@ export const caseStudies = {
       'Built with Astro as a static site, deployed at compartmodels.com.',
     ],
   },
+  VidPop: {
+    subtitle: 'Hybrid on-device and cloud AI that fact-checks claims and surfaces products at the exact moment they appear in a video',
+    role: 'Solo: extraction pipeline, verification, player UI, transcription and deployment',
+    links: [
+      { label: 'Live demo', href: 'https://vidpop-ee91f.web.app' },
+      { label: 'Code on GitHub', href: 'https://github.com/kaiji123/vidpop' },
+    ],
+    stats: [
+      { value: '4', label: 'extraction engines in a fallback chain, from Gemini Nano on-device to a heuristic' },
+      { value: '<0.1 s', label: 'transcript alignment error on the demo clips after audio-onset snapping' },
+      { value: '0', label: 'backend servers: static Firebase Hosting with App Check protecting the Gemini quota' },
+    ],
+    problem:
+      'Short videos make claims and mention products faster than viewers can check them. Looking something up means leaving the video, and by the time you search, the moment has passed.',
+    approach: [
+      'Gemini Nano reads the timestamped transcript on-device (Firebase AI Logic, PREFER_ON_DEVICE) in windows of 8 numbered lines and returns schema-constrained JSON with a segment index rather than a time, so popups always land on the transcript timestamp.',
+      'Fallback chain: Firebase hybrid, then the Chrome Prompt API, then the Gemini API, then a heuristic. Every result shows which engine produced it, so the demo never dead-ends.',
+      'Claims are pre-verified in the background by cloud Gemini with Grounding with Google Search, using a neutral SUPPORTED / CONTRADICTED / MIXED / INSUFFICIENT verdict, with the Fact Check Tools API in parallel and Google Search Suggestions rendered in a shadow root.',
+      'Uploaded clips are transcribed from a 16 kHz mono WAV of the audio only, and whole-second timestamps are snapped to real speech onsets found from audio energy.',
+      'Discover Mode shows clearly labelled sponsored offers on product moments only: never on claims or political content, never targeted by inferred interests, and always below organic Search links.',
+    ],
+    outcome: [
+      'A 9:16 player with captions, timed popups, tappable claim markers on the scrubber and an in-video bottom sheet that keeps the video playing.',
+      'Two synthetic, fully licensed demo clips with exact timestamps, including a Tokyo population claim that shows why publication dates matter for verification.',
+      'Deployed as a static site on Firebase Hosting with reCAPTCHA Enterprise App Check and dev-only API keys stripped from production builds. Built for Google’s #BuildHybridAI 2026 hackathon.',
+    ],
+  },
   'Trace Lab': {
     subtitle: 'Step-through traces of coding interview problems',
     role: 'Solo — design, trace engine, content and tooling',
