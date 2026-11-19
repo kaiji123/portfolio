@@ -173,6 +173,12 @@ export const research = [
     href: 'https://arxiv.org/abs/2611.15991',
   },
   {
+    title: 'Can Weight-Space Programming Alter Learned Ethical Priorities?',
+    kind: 'Paper · arXiv',
+    text: 'Edits fitted choice weights in a concept-supervised text model so that breaking a formal pledge needs a larger benefit than breaking an ordinary promise, while keeping factual accuracy. Includes a YOLO11n bias-edit pilot on COCO128.',
+    href: 'https://arxiv.org/abs/2611.24330',
+  },
+  {
     title: 'SA-HEACS: Server-Assisted Hybrid Execution and AI-Optimized Cloud Shielding Against Automated Reverse Engineering',
     kind: 'Paper · Zenodo · v2',
     text: 'A hybrid client–server execution model that shields software from automated reverse engineering.',
