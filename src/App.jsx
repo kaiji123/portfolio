@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import photo from './assets/profile.jpg';
 import {
   profile, stats, experience, education, research, books, projects,
-  projectCategories, channels, otherMade, skills, certifications, languages, memberships,
+  projectCategories, channels, otherMade, skills, awards, certifications, languages, memberships,
 } from './data.js';
 import { caseStudies } from './caseStudies.js';
 
@@ -351,6 +351,19 @@ function ProjectPage({ project: p }) {
         <h2>The outcome</h2>
         <ul className="bullets">{s.outcome.map((o) => <li key={o}>{o}</li>)}</ul>
       </section>
+      {s.testimonials && (
+        <section className="case-section">
+          <h2>What users say</h2>
+          <div className="quotes">
+            {s.testimonials.map((t) => (
+              <figure key={t.quote} className="quote">
+                <blockquote>“{t.quote}”</blockquote>
+                <figcaption>{t.author}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
 
       <nav className="case-nav" aria-label="More case studies">
         <a href={projectPath(prev)}><span className="muted mono">← Previous</span>{prev.name}</a>
@@ -368,6 +381,18 @@ function Skills() {
           <div key={s.group} className="skill-row reveal">
             <h4>{s.group}</h4>
             <div className="chips">{s.items.map((i) => <span key={i} className="chip">{i}</span>)}</div>
+          </div>
+        ))}
+      </div>
+      <div className="card reveal awards">
+        <h4>Awards</h4>
+        {awards.map((a) => (
+          <div key={a.title} className="award">
+            <p className="award-head">
+              <span>{a.title}</span>
+              <span className="muted mono">{a.event} · {a.issuer} · {a.date}</span>
+            </p>
+            <p>{a.text}</p>
           </div>
         ))}
       </div>

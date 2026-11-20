@@ -182,6 +182,11 @@ export const caseStudies = {
       'Golden-file tests plus R-side checks: the generated Hepatitis E model matches the original script exactly, and every library model solves with finite, non-negative compartments.',
       'Built with Astro as a static site, deployed at compartmodels.com.',
     ],
+    testimonials: [
+      { quote: 'The creator is lowk the goat', author: 'Student, University of Oxford' },
+      { quote: 'The LeBron James of Oxford', author: 'Student, University of Oxford' },
+      { quote: 'Super cool. Thank you Kai', author: 'Student, University of Oxford' },
+    ],
   },
   VidPop: {
     subtitle: 'Hybrid on-device and cloud AI that fact-checks claims and surfaces products at the exact moment they appear in a video',

@@ -240,6 +240,16 @@ main, .contact { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 }
 .case-section p { font-size: 1.05rem; }
 .case-section .bullets li { margin: 10px 0; }
+.awards { margin-top: 36px; }
+.award + .award { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+.award-head { display: flex; flex-direction: column; gap: 2px; margin-bottom: 6px; }
+.award-head span:first-child { font: 400 1.15rem var(--serif); color: var(--accent); }
+.award-head .mono { font-size: 0.8rem; }
+.award p:last-child { font-size: 0.93rem; }
+.quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.quote { margin: 0; padding: 20px 22px; background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 14px; }
+.quote blockquote { margin: 0; font: 400 1.15rem/1.4 var(--serif); }
+.quote figcaption { margin-top: 10px; color: var(--muted); font-size: 0.85rem; }
 .case-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--line); }
 .case-nav a {
   display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; border: 1px solid var(--line);
@@ -312,6 +322,7 @@ main, .contact { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
   .case-stats div, .case-stats div:first-child { padding: 16px 12px 14px 0; border-left: 0; }
   .case-stats div:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--line); }
   .case-stats div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .quotes { grid-template-columns: 1fr; }
   .case-nav { grid-template-columns: 1fr; }
   .case-nav .next { text-align: left; }
 }

@@ -276,6 +276,30 @@ export const skills = [
   { group: 'Creative', items: ['Unity', 'Unreal Engine', 'Blender', 'Framer', 'Canva', 'AutoCAD'] },
 ];
 
+export const awards = [
+  {
+    title: 'Read the Machine — Team Special Award',
+    event: 'Making Sense Hackathon 2026',
+    issuer: 'OxAI, University of Oxford',
+    date: 'Nov 2026',
+    text: 'Project lead and principal developer of TraceNetwork, an AI project to make AI models and their impact more transparent: ideation, solution design, data engineering, graph network development and model evaluation. The project won awards in three categories.',
+  },
+  {
+    title: 'Data Science — Individual Special Award',
+    event: 'Making Sense Hackathon 2026',
+    issuer: 'OxAI, University of Oxford',
+    date: 'Nov 2026',
+    text: 'Awarded for my technical contributions to TraceNetwork, from design and implementation through to delivery.',
+  },
+  {
+    title: 'Applied Semiotics — Individual Special Award',
+    event: 'Making Sense Hackathon 2026',
+    issuer: 'OxAI, University of Oxford',
+    date: 'Nov 2026',
+    text: 'Won by a teammate on TraceNetwork, where I was project lead and principal developer: ideation, solution design, data engineering, graph network development and model evaluation. TraceNetwork is an AI project to make AI models and their impact more transparent, and it won awards in three categories.',
+  },
+];
+
 export const certifications = [
   'Hack-Nation — Acknowledgment of Participation, Hack-Nation Oxford Hackathon (Nov 2026)',
   'AmplifyME — Finance Accelerator Simulation: Sales & Trading and Asset Management (2026)',
