@@ -215,6 +215,7 @@ export const projects = [
   { name: 'Stackyard', featured: true, cat: 'tools', text: 'No-code card-stack maker inspired by 1987 tools like HyperCard. Put text, pictures and buttons on cards, link them with dropdown actions, draw and animate pixel art, and export the whole stack as one self-contained HTML file that runs offline forever and doubles as the save file. Built with Kiro for Kiroween 2026.', tech: ['TypeScript', 'Vite', 'Vitest', 'fast-check', 'Playwright', 'Kiro'], href: 'https://github.com/kaiji123/stackyard', extra: { label: 'Live demo', href: 'https://stackyard.kaigets123.workers.dev/' } },
   { name: 'CompartModels', featured: true, cat: 'ai', text: 'Draw a compartmental epidemic model (SIR, SEIR, vector-borne and more) as boxes and arrows and get ready-to-run R/deSolve code. Output is deterministic and byte-identical every time, expressions are validated before code is generated, and a searchable library of 118 models from the literature is solved in R by the test suite.', tech: ['JavaScript', 'Astro', 'R', 'deSolve', 'node:test'], href: 'https://github.com/kaiji123/sir-models', extra: { label: 'Live demo', href: 'https://compartmodels.com' } },
   { name: 'VidPop', featured: true, cat: 'ai', text: 'Search, discover and verify information at the exact moment it appears in a video. Gemini Nano scans the transcript on-device for checkable claims and products, then a card pops up at the exact timestamp with a verdict already fact-checked by cloud Gemini with Google Search grounding, and a cited answer opens inside the video. Built for Google’s #BuildHybridAI 2026 hackathon.', tech: ['TypeScript', 'React', 'Vite', 'Gemini Nano', 'Firebase AI Logic', 'Google Search grounding'], href: 'https://github.com/kaiji123/vidpop', extra: { label: 'Live demo', href: 'https://vidpop-ee91f.web.app' } },
+  { name: 'Bumphole', cat: 'web', text: 'Route risk assessment for e-scooter riders: scores a journey on bumps, potholes and traffic levels so riders can spot road hazards before they set off. Built in six hours with AI-assisted tools at the OX1 × MunOx Zero Friction Hackathon, where it was a pitch finalist.', tech: ['Lovable', 'AI-assisted development'], extra: { label: 'Live demo', href: 'https://oxford-bump-scout.lovable.app' } },
   { name: 'MediSim', featured: true, cat: 'ai', text: 'Simulates real-time patient scenarios so aspiring doctors can practise for OSCE exams, with interactive feedback.', tech: ['Expo', 'React Native', 'Django'] },
   { name: 'MediSim Desktop', cat: 'ai', text: 'Desktop OSCE simulator using the latest LLMs, tuned for speed vs. quality, with video playback for realistic practice.', tech: ['PySide', 'LLMs'] },
   { name: 'BsFinancials', cat: 'ai', text: 'Converts bank statements to CSV and highlights accounting, auditing and legal insights with GPT. Also published as an API on RapidAPI.', tech: ['Svelte', 'Supabase', 'Stripe', 'OpenAI'] },
@@ -277,6 +278,13 @@ export const skills = [
 ];
 
 export const awards = [
+  {
+    title: 'Pitch Finalist',
+    event: 'OX1 × MunOx Zero Friction Hackathon',
+    issuer: 'OX1 & MunOx, University of Oxford',
+    date: 'Nov 2026',
+    text: 'One of six pitch finalists at the hackathon, sponsored by Lovable and Enspire Oxford. Built Bumphole, a web tool that gives e-scooter riders route risk scores based on bumps, potholes and traffic levels, as a working prototype in six hours with AI-assisted tools, then pitched it to the judging panel.',
+  },
   {
     title: 'Read the Machine — Team Special Award',
     event: 'Making Sense Hackathon 2026',
