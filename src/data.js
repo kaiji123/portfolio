@@ -279,14 +279,14 @@ export const skills = [
 
 export const awards = [
   {
-    title: 'Finalist',
+    title: 'Finalist — Top 3 Teams',
     event: 'Code the Change Hackathon',
     issuer: 'Code the Change, University of Oxford',
     date: 'Nov 2026',
-    text: 'Our team was a finalist at Code the Change, a one-day hackathon for Oxford students, for building Antes, a flood preparedness prototype that helps emergency teams decide when to issue warnings, plan evacuations and stage resources. We built an operations dashboard that shows forecast uncertainty and risks to communities and infrastructure, plus an iPhone prototype for first responders and residents. The project was inspired by the January 2026 Limpopo floods in Mozambique.',
+    text: 'Our team was a top 3 finalist at Code the Change, a one-day hackathon for Oxford students, for building Antes, a flood preparedness prototype that helps emergency teams decide when to issue warnings, plan evacuations and stage resources. We built an operations dashboard that shows forecast uncertainty and risks to communities and infrastructure, plus an iPhone prototype for first responders and residents. The project was inspired by the January 2026 Limpopo floods in Mozambique.',
   },
   {
-    title: 'Pitch Finalist',
+    title: 'Pitch Finalist — Top 6',
     event: 'OX1 × MunOx Zero Friction Hackathon',
     issuer: 'OX1 & MunOx, University of Oxford',
     date: 'Nov 2026',
