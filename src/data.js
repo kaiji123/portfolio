@@ -179,6 +179,13 @@ export const research = [
     href: 'https://arxiv.org/abs/2611.24330',
   },
   {
+    title: 'A Hierarchical Adaptive Standard Gamble for Cross-Species Welfare Valuation',
+    kind: 'Paper · Zenodo',
+    text: 'A Bayesian adaptive Standard Gamble that learns from previous respondents to pick informative offers, extends to non-human animals through a behavioural gamble, and separates probability weighting from state utility in a two-stage design. Benchmarked against three other elicitation methods in Monte Carlo simulation.',
+    href: 'https://zenodo.org/records/24544292',
+    extra: { label: 'Code', href: 'https://github.com/kaiji123/HA-SG' },
+  },
+  {
     title: 'SA-HEACS: Server-Assisted Hybrid Execution and AI-Optimized Cloud Shielding Against Automated Reverse Engineering',
     kind: 'Paper · Zenodo · v2',
     text: 'A hybrid client–server execution model that shields software from automated reverse engineering.',
